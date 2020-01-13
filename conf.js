@@ -2,7 +2,7 @@ exports.config = {
     sauceUser: process.env.SAUCE_USERNAME,
     sauceKey: process.env.SAUCE_ACCESS_KEY,
     // sauceRegion: 'eu',
-
+    sauceSeleniumAddress: 'ondemand.us-east-1.saucelabs.com/wd/hub',
     specs: ['specs/*spec.js'],
 
     onPrepare: function () {
@@ -12,14 +12,14 @@ exports.config = {
     multiCapabilities: [{
         browserName: 'firefox',
         version: 'latest',
-        platform: 'OS X 10.13',
+        platform: 'linux',
         name: "firefox-tests",
         shardTestFiles: true,
         maxInstances: 25
     }, {
         browserName: 'chrome',
         version: 'latest',
-        platform: 'Windows 10',
+        platform: 'linux',
         name: "chrome-tests",
         shardTestFiles: true,
         maxInstances: 25
